@@ -1,6 +1,6 @@
 {
-  "name": "react-native-vector-icons",
-  "version": "7.0.0",
+  "name": "@heylo/react-native-vector-icons",
+  "version": "7.0.4",
   "description": "Customizable Icons for React Native with support for NavBar, image source and full styling.",
   "main": "dist/index.js",
   "bin": {
@@ -57,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/oblador/react-native-vector-icons.git"
+    "url": "git://github.com/brandonpearcy/react-native-vector-icons.git"
   },
   "license": "MIT",
   "dependencies": {

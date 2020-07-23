@@ -17,7 +17,6 @@ Perfect for buttons, logos and nav/tab bars. Easy to extend, style and integrate
 - [Icon Component](#icon-component)
 - [Icon.Button Component](#iconbutton-component)
 - [Usage as PNG image/source object](#usage-as-png-imagesource-object)
-- [Usage with TabBarIOS](#usage-with-tabbarios)
 - [Multi-style fonts](#multi-style-fonts)
 - [Custom Fonts](#custom-fonts)
 - [Animation](#animation)
@@ -360,24 +359,6 @@ Icon.getImageSource('user', 20, 'red').then(source =>
 
 Alternatively you may use the synchronous method `Icon.getImageSourceSync` to avoid rendering glitches. Keep in mind that this method is blocking and might incur performance penalties. Subsequent calls will use cache however.
 
-For a complete example check out the `TabBarExample` project.
-
-## Usage with [TabBarIOS](https://reactnative.dev/docs/tabbarios.html)
-
-Simply use `Icon.TabBarItemIOS` instead of `TabBarIOS.Item`. This is an extended component that works exactly the same but with three additional properties:
-
-| Prop                    | Description                                                             | Default       |
-| ----------------------- | ----------------------------------------------------------------------- | ------------- |
-| **`iconName`**          | Name of the default icon (similar to `TabBarIOS.Item` `icon`)           | _None_        |
-| **`selectedIconName`**  | Name of the selected icon (similar to `TabBarIOS.Item` `selectedIcon`). | _`iconName`_  |
-| **`iconSize`**          | Size of the icon.                                                       | `30`          |
-| **`iconColor`**         | Color of the icon.                                                      | _None_        |
-| **`selectedIconColor`** | Color of the selected icon.                                             | _`iconColor`_ |
-
-For example usage see `Examples/TabBarExample` or the examples section below. Don't forget to import and link to this project as described above if you are going to use the TabBar integration.
-
-**Note:** using `iconColor` and `selectedIconColor` requires the attribute [renderAsOriginal](https://reactnative.dev/docs/tabbarios-item.html#renderasoriginal) to be set to `true` on `Icon.TabBarItemIOS`.
-
 # Multi-style fonts
 
 Some fonts today use multiple styles, FontAwesome 5 for example, which is supported by this library. The usage is pretty much the same as the standard `Icon` component:
@@ -407,7 +388,7 @@ If no style argument is passed (or if it's invalid) the methods will default to 
 
 ### Components
 
-`Icon.Button`, `Icon.TabBarItem`, `Icon.TabBarItemIOS` are all supported, usage is just like `Icon`:
+`Icon.Button` is supported, usage is just like `Icon`:
 
 ```jsx
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -557,31 +538,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 function ExampleView(props) {
   return <Icon name="ios-person" size={30} color="#4F8EF7" />;
-}
-```
-
-### TabBarIOS
-
-Full example in `TabBarExample` project in `Examples/TabBarExample` folder.
-
-```js
-import { View, Text, TabBarIOS } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-
-function TabBarView(props) {
-  return (
-    <TabBarIOS>
-      <Icon.TabBarItem
-        title="Home"
-        iconName="ios-home-outline"
-        selectedIconName="ios-home"
-      >
-        <View style={styles.tabContent}>
-          <Text>Home Tab</Text>
-        </View>
-      </Icon.TabBarItem>
-    </TabBarIOS>
-  );
 }
 ```
 

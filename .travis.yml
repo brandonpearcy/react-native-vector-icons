@@ -1,25 +1,16 @@
 language: node_js
 node_js:
-  - '12'
+- '12'
 script:
-  - yarn test
+- yarn test
 before_deploy: 'cd directory && yarn && yarn build && cd ..'
 deploy:
   - provider: npm
     skip_cleanup: true
-    email: joel@oblador.se
+    email: brandon@heylo.co
     api_key:
-      secure: 'av3+by9iEBSBxbZm5MRdo23stPqbQ1j1jeIVhKhNbuYvRnbB0dwnly+thrQ3Osh+Cl2yZO6yaBK1hEa7RnESnE1/NMgdPhJuCuOKkFulyiEH5Rlk4wiGTAYiYDr36uUMlqUZuVfusSBVSMhBXHRLdyTtM9bR3ab5W8v8IBSITsllWvKQzflBF5JqYlzWqd/Dc/JRUgX9MwMWmygsIZg1rfuoF2+n+DG/Dc7d/sT5sETkzjc/ejwTYE5Wrbvd5+zGYmz3l8A7PjGv/ec3fVlZVsXtNQk8s1dtfQijhJDhJ7Z9Dq/Bolu8K3rwEMAXnx1eCOlbuNzRY1jYztE+T/6WgHnEc3RWGI7WGuA23RBtGPcrdQqDj9gRC4HS0BcCnNcSVNQ+tn1D7PkPVuv5WrEDcXK8yVPG8nLhsOgrdOIM3GIefO1UDY1OS4EuiwaLRlnR5r3MWaQ4Z8UmRfQYD0/N0YVQZqRTd1VjfrBZnATlZKlu3x87yhsu95HsfYGI5YX7hxaWpDb4ZLJyFOvyUFEhI8TSvi1mai+ws5WWcX7SklYnUvgs589TlEeWb1icAeK64MWQE2Una/72f/R5YOq62tY8xPA9VqcRHVrtXqvmW+ghGknmQeBy+9+h9nktGVA1jQCTVk3DFDcsSia1VzEBrAQ543t6SmCMBBigUA/tAiU='
+      secure: 'Bbk1OEPh68TN8FlvajWXW3kfe6jvGA9NEmh7ExCbd/+KXX2SjDwhTirPGXLUV57oDmO0xooWFNcNltYAczNJzBGx4yMh1wwG85mWIBhZJ7YhBPstZXJN91Hm9l9yJ1gn7iLmjw1m7sWZijFYFCcEGkPhRS5ySQI8eaget6luNecXsUOsjM5ixztJCyowfc5mlxwcNZpqYDRRZWk+nQ20eSRFg26DrGbu5rxXw6+wyk4sZ3H3YuD8Nnu98y8lPHp2J55B6/sNTpkKzbX2dXxoHOknuKXtKy30936YGl7P9yWSJrdlmnl2hMMCCrLP9WCwL1zXfWPwuJcTRQMIOZ38bklgJlCVol3ivgVShZj3UCB6cuF728/9rgBLDOYQvMYSRTBxF1VzaN+XbvQibRSE8rwr9bdxSQlWCiticSjVQYd5cesOvn6hGzxrJquQOYqgNf0fF+JBjUEM5tT8VSb6jjs/gXWaFkjOcDsZa6fgQWroOFr/rC0SNEWIKKf+TCjJ7Wwjlb5ivVendlwosGf7hh5umgXYZhQaZUPNv14V6j7Yse3QHu0k5wXeFKWmEQ/71p/1TSapgPViSM5jeWDeGZ7qgaeLnkZKSLCdvaB0Cp3fI+J8j0nSIYzNk9uGcFPVwSzD1KxaQswOvjA3WhypmcBwP0tKeV3vpJyohaMYzow='
     on:
       tags: true
-      repo: oblador/react-native-vector-icons
-      condition: "$TRAVIS_TAG =~ ^v[0-9]+\\.[0-9]+\\.[0-9]+.*$"
-  - provider: pages
-    skip_cleanup: true
-    local_dir: 'directory/build'
-    github_token:
-      secure: 'dErvAbyystT3eO9BZoOqxNaxKgFdMu3RyeogEEBAinu1iSQcylH3+ZSdN5IDvfShRnoeuc61aukMHdgHgSoomherhN2yJc2GnISkhCP1w4qfTlJGc1JqEXoKNBcQ7GGKNxeABxH3LUwooGAPppfPZ2WMe1meg5363t2IcaWbDGXKdHReyBkT9S1ZW1J2bEUXI/UKilukNQgDdwbhzyalEgGMl2BtaOo9CCyBmBp77KgRjO2175b5bHoYXTLPcjCR697lJq7K6GhFoPolexofv1zM/5IPSPGVoHnG9sqiMCWME+fvysFbgcUQQbfhX8jEZtbXuyM4Q/KCXRtOkxtJBa/ZNKDM7RIA+odMed7Usxz53O13/PUCFozURWoDG83paWLuBKl5TFMWxUuGFVaDGv/GugSLrjp9Hz6bGNBXxlRrwhrByqSsP5vLyDvCbxFdnUp5u+DfSKolW1D0chkJ1L0RX4tXuq+oR0gwVMY336angh4JCE989bU04HGxxuo11KL95yndzRdxfXEpWE+RRP1HkUIp/jsAVErhfmpZrpb+O1AceEgT3H8yb3F1uwdNI5YsV7Wc2Kmf2LxP7QBzkPMRY2locCPyks3e9vnjx/D9CQzFMjroh+zhC5eUcmO5IjpYWzxz6L6vdw+n9xwOj2rlmH1/z18RI5RMf2/idRs='
-    on:
-      tags: true
-      repo: oblador/react-native-vector-icons
+      repo: brandonpearcy/react-native-vector-icons
       condition: "$TRAVIS_TAG =~ ^v[0-9]+\\.[0-9]+\\.[0-9]+.*$"
